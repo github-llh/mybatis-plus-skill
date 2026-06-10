@@ -44,6 +44,13 @@
 5. 涉及 API、DTO、SQL、数据库字段、权限、租户、插件、DDL、多数据源时，先梳理调用链和影响范围。
 6. 默认最小、安全、可回滚修改；未明确要求不新增依赖、不迁移数据、不改变公共契约。
 
+## 索引性能设计
+
+- `SKILL.md` 只保留高置信触发证据、排除条件、核心工作方式和 reference 路由，避免默认加载大量官网细节。
+- `references/00-index.md` 维护官网功能地图和关键词到 reference 的精确路由，用于在触发后快速选择 1-2 个相关文档。
+- 具体语法、插件、安全边界和高级扩展放在独立 reference 中，按需读取，减少上下文占用。
+- `agents/openai.yaml` 提供短展示名和短描述，便于工具列表和技能市场快速索引。
+
 ## 常用示例
 
 ### 动态查询
@@ -149,6 +156,8 @@ mybatis-plus-skill/
 ├── SKILL.md
 ├── README.md
 ├── README.en.md
+├── agents/
+│   └── openai.yaml
 └── references/
     ├── 00-index.md
     ├── 01-dependency-configuration.md

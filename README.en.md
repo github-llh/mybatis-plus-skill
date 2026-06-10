@@ -44,6 +44,13 @@ It should not activate for plain MyBatis, MyBatis-Flex, JPA, or other ORM tasks 
 5. Before changing API, DTO, SQL, database fields, permissions, tenants, plugins, DDL, or data sources, trace the full call chain and impact scope.
 6. Keep changes minimal, safe, and reversible by default; do not add dependencies, migrate data, or change public contracts unless explicitly requested.
 
+## Indexing Design
+
+- `SKILL.md` keeps only high-confidence trigger evidence, exclusion rules, core workflow, and reference routing to avoid loading large official-doc details by default.
+- `references/00-index.md` maintains the official feature map and keyword-to-reference routing, so the agent can open only 1-2 relevant files after activation.
+- Detailed syntax, plugins, security boundaries, and advanced extensions live in separate references and are loaded on demand.
+- `agents/openai.yaml` provides a short display name and summary for faster skill-list and marketplace indexing.
+
 ## Common Examples
 
 ### Dynamic Query
@@ -149,6 +156,8 @@ mybatis-plus-skill/
 ├── SKILL.md
 ├── README.md
 ├── README.en.md
+├── agents/
+│   └── openai.yaml
 └── references/
     ├── 00-index.md
     ├── 01-dependency-configuration.md

@@ -2,6 +2,29 @@
 
 本文件用于对齐 MyBatis-Plus 官网侧边栏功能，避免技能只覆盖少量常用 API。处理相关任务时，先按主题读取对应 references 文件，不要一次性加载全部文档。
 
+## 索引路由规则
+
+- 触发判断只看高置信证据：`com.baomidou.mybatisplus`、`mybatis-plus-boot-starter`、`BaseMapper`、`IService`、`ServiceImpl`、`LambdaQueryWrapper`、`LambdaUpdateWrapper`、`Wrappers`、`MybatisPlusInterceptor`、`@TableName`、`@TableId`、`@TableField`、`@TableLogic`、`@Version`、`MetaObjectHandler`、`Page`、`IPage`。
+- 排除判断优先级高于泛化 ORM 关键词：只看到 `com.mybatisflex`、`QueryChain`、`UpdateChain`、`TableDef`、`SqlSession`、JPA 注解或 XML Mapper 时，不要按 MyBatis-Plus 处理。
+- 定位具体语法时优先在本文件查表；只打开命中的 1-2 个 reference。
+
+## 关键词到 reference
+
+| 关键词 | 优先读取 |
+|--------|----------|
+| `mybatis-plus-boot-starter`、`MapperScan`、`mapper-locations`、`global-config` | `01-dependency-configuration.md` |
+| `@TableName`、`@TableId`、`@TableField`、`@TableLogic`、`@Version`、`IdType` | `02-annotations-entity.md` |
+| `BaseMapper`、`IService`、`ServiceImpl`、`selectPage`、`saveBatch`、`streamQuery` | `03-crud-service-mapper.md` |
+| `QueryWrapper`、`LambdaQueryWrapper`、`Wrappers.lambdaQuery`、`orderBy`、`groupBy` | `04-wrapper-query.md` |
+| `UpdateWrapper`、`LambdaUpdateWrapper`、`Wrappers.lambdaUpdate`、`setSql`、`updateById` | `05-wrapper-update.md` |
+| `MybatisPlusInterceptor`、`PaginationInnerInterceptor`、`TenantLineInnerInterceptor`、`BlockAttackInnerInterceptor` | `06-plugins-core.md` |
+| `FastAutoGenerator`、`AutoGenerator`、`IdentifierGenerator`、`SqlInjector` | `07-generator-advanced.md` |
+| `Model<T>`、`Db`、`SimpleQuery` | `08-ar-db-simplequery.md` |
+| `@EnumValue`、`JacksonTypeHandler`、`TypeHandler`、`autoResultMap` | `09-enum-typehandler.md` |
+| `MetaObjectHandler`、`FieldFill`、`strictInsertFill`、`strictUpdateFill` | `10-auto-fill.md` |
+| `last`、`apply`、`inSql`、`${}`、SQL 注入、排序白名单 | `11-security-sql.md` |
+| 自动 DDL、多数据源、`SqlSessionFactory`、读写分离 | `12-ddl-datasource-extension.md` |
+
 ## 指南
 
 | 官网主题 | 本技能参考文件 | 处理提示 |
